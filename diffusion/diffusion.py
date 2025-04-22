@@ -17,9 +17,9 @@ nfreq=10
 lr=3e-4
 
 #Load Ising data
-ising_data=np.load('../IsingData/ising_dataset2.npy')
+ising_data=np.load('../IsingData/ising_dataset2.npy', allow_pickle=True)
 ising_data.shape = -1, 1, imgsize, imgsize
-temperature_label=np.load('../IsingData/labels_dataset2.npy')
+temperature_label=np.load('../IsingData/labels_dataset2.npy', allow_pickle=True)
 dataset = TensorDataset(torch.tensor(ising_data,dtype=torch.float),torch.tensor(temperature_label,dtype=torch.float))
 dataloader=DataLoader(dataset,batch_size=batch_size,shuffle=True)
 
